@@ -1,4 +1,4 @@
-package zosia.tasks;
+/*package zosia.tasks;
 
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -11,16 +11,14 @@ import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Main extends Application {
+public class blueStar extends Application {
 
-    /**
-     *
-     * @param args
-     */
+
     public static void main(String[] args) {
 
         launch(args);
@@ -37,7 +35,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
-        Text text = new Text("Homework are awesome!");
+        Text text = new Text("Homework is awesome!");
         text.setY(180);
         text.setFont(Font.font(15));
         text.setX(300-((text.getLayoutBounds().getWidth())/2));
@@ -48,6 +46,7 @@ public class Main extends Application {
         showShapes(root, frame);
 
     }
+
 
     private List<Shape> chainOfCaR(double a, double x0, double y0, double d){
         List<Shape> list = new ArrayList<>();
@@ -68,13 +67,14 @@ public class Main extends Application {
             }else{
                 y -=d;
             }
-        }
 
+        }
         return list;
     }
     private void showShapes (Group g, List<Shape> tablica){
         for (Shape r: tablica){
             g.getChildren().add(r);
+
         }
     }
     private Circle getCircle(double x, double y, double r){
@@ -98,13 +98,10 @@ public class Main extends Application {
     private static Polygon setStar (double centerX, double centerY, double radius, int sides){
         Polygon star = new Polygon();
         double radiusSmall = radius*Math.sin(Math.PI/(2*sides))/Math.cos(Math.PI/sides);
-        System.out.println(radiusSmall);
         for (int i = 0; i < sides; i++) {
             double angle = i*2*Math.PI/sides;
             star.getPoints().addAll(radius*Math.sin(angle)+centerX,
                     centerY-radius*Math.cos(angle));
-            System.out.println(radius*Math.sin(angle)+centerX);
-            System.out.println(centerY-radius*Math.cos(angle));
 
             angle += Math.PI/(sides);
             star.getPoints().addAll(radiusSmall*Math.sin(angle)+centerX,
@@ -114,4 +111,4 @@ public class Main extends Application {
         return star;
     }
 
-}
+}*/
