@@ -39,7 +39,6 @@
                 <version>0.0.3</version>
                 <configuration>
                     <mainClass>zosia.tasks.models.redStar</mainClass>
-                    <mainClass>zosia.tasks.models.blueStar</mainClass>
                 </configuration>
             </plugin>
         </plugins>
