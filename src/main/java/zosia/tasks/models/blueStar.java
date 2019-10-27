@@ -1,4 +1,4 @@
-/*package zosia.tasks;
+package zosia.tasks.models;
 
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -16,14 +16,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Application main class for java FX.
+ *
+ * @Author Zofia B.
+ */
 public class blueStar extends Application {
 
+    /**
+     * Main method of application.
+     *
+     * @param args application command line arguments.
+     */
 
     public static void main(String[] args) {
 
         launch(args);
     }
 
+    /**
+     * Method call by lunch witch prepare scene, star polygon, text etc.
+     *
+     * @param stage The param of stage on witch we can see whole homework.
+     */
     @Override
     public void start(Stage stage) {
         Group root = new Group();
@@ -42,13 +57,25 @@ public class blueStar extends Application {
         text.setFill(Color.GREENYELLOW);
         root.getChildren().add(text);
 
-        List<Shape> frame = chainOfCaR(600,  0, 0, 50);
+        List<Shape> frame = chainOfCirclesAndSquares(600,  0, 0, 50);
         showShapes(root, frame);
 
     }
 
-
-    private List<Shape> chainOfCaR(double a, double x0, double y0, double d){
+    /**
+     * Method to get the list of frame of shapes(circles and squares).
+     *
+     * @param a Size of the stage,
+     *
+     * @param x0 Coordinate x for center.
+     *
+     * @param y0 Coordinate y for center.
+     *
+     * @param d Diameter of the shapes(circle and squares)
+     *
+     * @return
+     */
+    private List<Shape> chainOfCirclesAndSquares(double a, double x0, double y0, double d){
         List<Shape> list = new ArrayList<>();
         double x = x0 + d/2;
         double y = y0 + d/2;
@@ -71,12 +98,33 @@ public class blueStar extends Application {
         }
         return list;
     }
+
+    /**
+     * Private method which add the frame to the scene.
+     *
+     * @param g Root parameter.
+     *
+     * @param tablica Collection of frame shapes.
+     */
     private void showShapes (Group g, List<Shape> tablica){
         for (Shape r: tablica){
             g.getChildren().add(r);
 
         }
     }
+
+
+    /**
+     * Method to get the circle with random color for the frame.
+     *
+     * @param x Coordinate x for center.
+     *
+     * @param y Coordinate y for center.
+     *
+     * @param r Radius.
+     *
+     * @return Circle with random colour.
+     */
     private Circle getCircle(double x, double y, double r){
         Circle circle2 = new Circle(r);
         circle2.setCenterX(x);
@@ -86,6 +134,17 @@ public class blueStar extends Application {
         return circle2;
     }
 
+    /**
+     * Method to get the square with random color for the frame.
+     *
+     * @param x Coordinate x for center.
+     *
+     * @param y Coordinate y for center.
+     *
+     * @param d Diameter length.
+     *
+     * @return One square with random colour.
+     */
     private Rectangle getSquare(double x, double y, double d) {
         Rectangle rectangle = new Rectangle(d, d);
         rectangle.setX(x-d/2);
@@ -95,6 +154,19 @@ public class blueStar extends Application {
         return rectangle;
     }
 
+    /**
+     * Method to create star with the given number of sides and given radius.
+     *
+     * @param centerX Coordinates x of the center of the star.
+     *
+     * @param centerY Coordinates y of the center of the star.
+     *
+     * @param radius Radius of the star.
+     *
+     * @param sides Number of sides of the star.
+     *
+     * @return Star as a blue Polygon.
+     */
     private static Polygon setStar (double centerX, double centerY, double radius, int sides){
         Polygon star = new Polygon();
         double radiusSmall = radius*Math.sin(Math.PI/(2*sides))/Math.cos(Math.PI/sides);
@@ -111,4 +183,4 @@ public class blueStar extends Application {
         return star;
     }
 
-}*/
+}
