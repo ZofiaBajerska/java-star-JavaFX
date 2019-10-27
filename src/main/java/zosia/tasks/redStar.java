@@ -160,8 +160,6 @@ public class redStar extends Application {
         FadeTransition ft = new FadeTransition(Duration.millis(2000), node);
         ft.setFromValue(1.0);
         ft.setToValue(0.01);
-        //ft.setCycleCount(Timeline.INDEFINITE);
-        //ft.setAutoReverse(true);
         return ft;
     }
 
@@ -187,8 +185,6 @@ public class redStar extends Application {
         FadeTransition ft = new FadeTransition(Duration.millis(2000), node);
         ft.setFromValue(0.01);
         ft.setToValue(1);
-        //ft.setCycleCount(Timeline.INDEFINITE);
-        //ft.setAutoReverse(true);
         return ft;
     }
 
